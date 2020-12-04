@@ -12,15 +12,12 @@ def check_passwd(password):
     >>> check_passwd('2-9 c: ccccccccc')
     True
     """
-    pfields = password.split(' ')
+    pfields = password.split()
     pmin, pmax = [int(i) for i in pfields[0].split('-')]
     l = pfields[1][0]
     ps = pfields[2]
     pslen = len([i for i in ps if i == l])
-    if pmax >= pslen >= pmin:
-        return True
-    else:
-        return False
+    return pmax >= pslen >= pmin
 
 def check_passwd2(password):
     """
