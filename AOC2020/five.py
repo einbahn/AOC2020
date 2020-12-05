@@ -39,13 +39,8 @@ def decode_boarding_pass(boarding_pass, max_row=128, max_col=8):
 
 if __name__ == '__main__':
     puzzle = Puzzle(year=2020, day=5)
-    highest = 0
     # Part A
-    for i in puzzle.input_data.split('\n'):
-        _, _, seat_id = decode_boarding_pass(i)
-        if seat_id > highest:
-            highest = seat_id
-    print("The highest seat ID is {}".format(highest))
+    max(map(decode_boarding_pass, puzzle.input_data.split('\n')), key=lambda x: x[2])
 
     # Part B
     seats = []
