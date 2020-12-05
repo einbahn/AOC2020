@@ -7,3 +7,6 @@ class TestFive(unittest.TestCase):
         self.assertEqual(five.decode_boarding_pass('BFFFBBFRRR'), (70, 7, 567))
         self.assertEqual(five.decode_boarding_pass('FFFBBBFRRR'), (14, 7, 119))
         self.assertEqual(five.decode_boarding_pass('BBFFBBFRLL'), (102, 4, 820))
+        self.assertEqual(five.decode_boarding_pass_bin('BFFFBBFRRR'), (70, 7, 567))
+        self.assertEqual(five.decode_boarding_pass_bin('FFFBBBFRRR'), (14, 7, 119))
+        self.assertEqual(five.decode_boarding_pass_bin('BBFFBBFRLL'), (102, 4, 820))

@@ -37,6 +37,24 @@ def decode_boarding_pass(boarding_pass, max_row=128, max_col=8):
     return row, col, row * 8 + col
 
 
+# convert binary version
+def char_to_bin_str(input_char):
+    if input_char == 'F' or input_char == 'L':
+        return '0'
+    else:
+        return '1'
+
+
+def str_to_bin(pass_str):
+    return int("".join([char_to_bin_str(i) for i in pass_str]), 2)
+
+
+def decode_boarding_pass_bin(boarding_pass):
+    row = str_to_bin(boarding_pass[:7])
+    col = str_to_bin(boarding_pass[7:])
+    return row, col, row * 8 + col
+
+
 if __name__ == '__main__':
     puzzle = Puzzle(year=2020, day=5)
     # Part A
