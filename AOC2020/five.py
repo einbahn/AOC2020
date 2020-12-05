@@ -4,7 +4,7 @@ from aocd.models import Puzzle
 
 def bin_search(pass_str, max):
     low = 0
-    high = max
+    high = max - 1
     for i in pass_str:
         mid = ceil((low + high) / 2)
         if i == 'F' or i == 'L':
@@ -19,7 +19,7 @@ def bin_search(pass_str, max):
                 low = mid
 
 
-def decode_boarding_pass(boarding_pass, max_row=127, max_col=7):
+def decode_boarding_pass(boarding_pass, max_row=128, max_col=8):
     """
     F -> lower half
     B -> upper half
