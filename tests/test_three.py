@@ -1,6 +1,5 @@
 import unittest
-import three
-
+from AOC2020 import three
 
 class TestThree(unittest.TestCase):
 
