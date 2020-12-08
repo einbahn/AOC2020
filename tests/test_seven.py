@@ -7,5 +7,8 @@ class TestSeven(unittest.TestCase):
     data1 = 'shiny gold bags contain 2 dark red bags.\ndark red bags contain 2 dark orange bags.\ndark orange bags contain 2 dark yellow bags.\ndark yellow bags contain 2 dark green bags.\ndark green bags contain 2 dark blue bags.\ndark blue bags contain 2 dark violet bags.\ndark violet bags contain no other bags.'
 
     def test_process_luggage(self):
-        self.assertEqual(seven.process_luggage(self.data), 4)
-        self.assertEqual(seven.count_total_bags(self.data), 126)
+        graph = seven.make_graph(self.data)
+        graph1 = seven.make_graph(self.data1)
+        self.assertEqual(seven.part_a(graph), 4)
+        self.assertEqual(seven.part_b(graph), 32)
+        self.assertEqual(seven.part_b(graph1), 126)
