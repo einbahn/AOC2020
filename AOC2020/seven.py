@@ -54,5 +54,5 @@ def part_b(graph, target='shiny gold'):
 if __name__ == '__main__':
     puzzle = Puzzle(year=2020, day=7)
     graph = make_graph(puzzle.input_data)
-    print("{} outerbags can carry a {} bag.".format(part_a(graph), 'shiny gold'))
+    print("{} outer bags can carry a {} bag.".format(part_a(graph), 'shiny gold'))
     print("A {} bag contains {} other bags.".format('shiny gold', part_b(graph)))
