@@ -6,4 +6,7 @@ class TestEight(unittest.TestCase):
 
     def test_handheld_halting(self):
         self.assertEqual(eight.handheld_halting(self.data), 5)
+        self.assertEqual(eight.handheld_halting_brute_force(self.data), 8)
 
+if __name__ == '__main__':
+    unittest.main()
