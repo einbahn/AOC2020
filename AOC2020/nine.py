@@ -1,6 +1,3 @@
-from aocd.models import Puzzle
-from collections import deque
-
 def two_sum(data, target):
     data = sorted(data)
     left = 0
@@ -13,6 +10,7 @@ def two_sum(data, target):
         else:
             right -= 1
     raise ValueError
+
 
 def part_one(data, preamble_length=25):
     n = [int(i) for i in data.split('\n')]
@@ -34,18 +32,14 @@ def part_one(data, preamble_length=25):
 
 def part_two(data, target=41682220):
     n = [int(i) for i in data.split('\n')]
-    s = deque()
     i = 0
     k = i + 1
-    s.append(n[i])
-    s.append(n[k])
+    s = [n[i], n[k]]
     while sum(s) != target and k < len(n):
         if sum(s) > target:
             i += 1
             k = i + 1
-            s = deque()
-            s.append(n[i])
-            s.append(n[k])
+            s = [n[i], n[k]]
         else:
             k += 1
             s.append(n[k])
