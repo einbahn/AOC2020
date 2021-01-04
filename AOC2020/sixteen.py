@@ -55,7 +55,7 @@ def solve_two(data):
         for i in items:
             res = list(i[1].difference(processed)).pop()
             result.append((i[0], res))
-            processed = processed.union(i[1])
+            processed = i[1]
         return result
              
     for n in nearby:
@@ -84,4 +84,4 @@ def solve_two(data):
 puzzle = Puzzle(year=2020, day=16)
 data = 'class: 1-3 or 5-7\nrow: 6-11 or 33-44\nseat: 13-40 or 45-50\n\nyour ticket:\n7,1,14\n\nnearby tickets:\n7,3,47\n40,4,50\n55,2,20\n38,6,12'
 data2 = 'class: 0-1 or 4-19\nrow: 0-5 or 8-19\nseat: 0-13 or 16-19\n\nyour ticket:\n11,12,13\n\nnearby tickets:\n3,9,18\n15,1,5\n5,14,9'
-print(solve_two(puzzle.input_data))
+print(solve_two(puzzle.input_data)) #1346570764607
